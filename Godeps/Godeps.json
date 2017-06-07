@@ -1,0 +1,38 @@
+{
+	"ImportPath": "michiel.be/jwt-auth",
+	"GoVersion": "go1.8",
+	"GodepVersion": "v79",
+	"Packages": [
+		"./..."
+	],
+	"Deps": [
+		{
+			"ImportPath": "github.com/dgrijalva/jwt-go",
+			"Comment": "v3.0.0-18-g6c8dedd",
+			"Rev": "6c8dedd55f8a2e41f605de6d5d66e51ed1f299fc"
+		},
+		{
+			"ImportPath": "github.com/julienschmidt/httprouter",
+			"Comment": "v1.1-51-g975b5c4",
+			"Rev": "975b5c4c7c21c0e3d2764200bf2aa8e34657ae6e"
+		},
+		{
+			"ImportPath": "github.com/lib/pq",
+			"Comment": "go1.0-cutoff-166-g2704adc",
+			"Rev": "2704adc878c21e1329f46f6e56a1c387d788ff94"
+		},
+		{
+			"ImportPath": "github.com/lib/pq/oid",
+			"Comment": "go1.0-cutoff-166-g2704adc",
+			"Rev": "2704adc878c21e1329f46f6e56a1c387d788ff94"
+		},
+		{
+			"ImportPath": "golang.org/x/crypto/bcrypt",
+			"Rev": "7e9105388ebff089b3f99f0ef676ea55a6da3a7e"
+		},
+		{
+			"ImportPath": "golang.org/x/crypto/blowfish",
+			"Rev": "7e9105388ebff089b3f99f0ef676ea55a6da3a7e"
+		}
+	]
+}
