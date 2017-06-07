@@ -117,7 +117,7 @@ func register(w http.ResponseWriter, req *http.Request, _ httprouter.Params) {
 }
 
 func main() {
-	models.Init("postgres://postgres@localhost/postgres?sslmode=disable")
+	models.Init("postgres://onakcyocfselcn:300086296b493b4e7bf7ced89d656ac326c79613b7f218e80e16837de7e9146a@ec2-79-125-118-221.eu-west-1.compute.amazonaws.com:5432/ddeev71s1au19g")
 
 	router := httprouter.New()
 
