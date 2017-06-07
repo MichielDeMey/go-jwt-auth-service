@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"os"
 	"strings"
 	"time"
 
@@ -117,7 +118,7 @@ func register(w http.ResponseWriter, req *http.Request, _ httprouter.Params) {
 }
 
 func main() {
-	models.Init("postgres://onakcyocfselcn:300086296b493b4e7bf7ced89d656ac326c79613b7f218e80e16837de7e9146a@ec2-79-125-118-221.eu-west-1.compute.amazonaws.com:5432/ddeev71s1au19g")
+	models.Init(os.Getenv("DATABASE_URL"))
 
 	router := httprouter.New()
 
@@ -127,6 +128,6 @@ func main() {
 	router.POST("/login", login)
 	router.POST("/register", register)
 
-	log.Print("Listening on 80")
-	log.Fatal(http.ListenAndServe(":80", router))
+	log.Print("Listening")
+	log.Fatal(http.ListenAndServe(":"+os.Getenv("PORT"), router))
 }
