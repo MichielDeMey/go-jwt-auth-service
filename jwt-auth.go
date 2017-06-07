@@ -118,7 +118,17 @@ func register(w http.ResponseWriter, req *http.Request, _ httprouter.Params) {
 }
 
 func main() {
-	models.Init(os.Getenv("DATABASE_URL"))
+	databaseURL := "postgres://postgres@localhost/postgres?sslmode=disable"
+	port := "8080"
+
+	if p := os.Getenv("PORT"); p != "" {
+		port = p
+	}
+
+	if dbURI := os.Getenv("DATABASE_URL"); dbURI != "" {
+		databaseURL = dbURI
+	}
+	models.Init(databaseURL)
 
 	router := httprouter.New()
 
@@ -128,6 +138,6 @@ func main() {
 	router.POST("/login", login)
 	router.POST("/register", register)
 
-	log.Print("Listening")
-	log.Fatal(http.ListenAndServe(":"+os.Getenv("PORT"), router))
+	log.Print("Listening on port " + port)
+	log.Fatal(http.ListenAndServe(":"+port, router))
 }
