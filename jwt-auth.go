@@ -127,6 +127,6 @@ func main() {
 	router.POST("/login", login)
 	router.POST("/register", register)
 
-	log.Print("Listening on 8080")
-	log.Fatal(http.ListenAndServe(":8080", router))
+	log.Print("Listening on 80")
+	log.Fatal(http.ListenAndServe(":80", router))
 }
