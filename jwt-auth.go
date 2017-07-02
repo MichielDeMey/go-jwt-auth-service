@@ -9,11 +9,12 @@ import (
 	"strings"
 	"time"
 
+	"michiel.be/jwt-auth/models"
+
 	"golang.org/x/crypto/bcrypt"
 
 	jwt "github.com/dgrijalva/jwt-go"
 	"github.com/julienschmidt/httprouter"
-	"michiel.be/jwt-auth/models"
 )
 
 // SECRET JWT secret

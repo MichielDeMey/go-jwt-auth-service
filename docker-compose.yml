@@ -1,5 +1,14 @@
 version: '3'
 services:
+  auth:
+    build: .
+    volumes:
+      - .:/go/src/michiel.be/jwt-auth
+    environment:
+      - DATABASE_URL=postgres://postgres@db/postgres?sslmode=disable
+    depends_on:
+      - db
+
   db:
     image: postgres
     ports:
