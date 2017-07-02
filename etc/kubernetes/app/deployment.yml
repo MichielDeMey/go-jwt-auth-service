@@ -1,0 +1,19 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: jwt-auth
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: jwt-auth
+    spec:
+      containers:
+      - name: jwt-auth
+        image: michieldemey/go-jwt-auth-service
+        env:
+        - name: DATABASE_URL
+          value: "postgres://postgres:5dDorSqfI7@release-1-postgresql.default.svc.cluster.local/postgres?sslmode=disable"
+        ports:
+        - containerPort: 8080
